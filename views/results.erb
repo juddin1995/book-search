@@ -1,0 +1,17 @@
+<head>
+<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<form action="/" method="POST">
+    <input name="query" />
+    <button>Search</button>
+</form>
+
+<% @results.each do |result| %>
+<div class='book-result'>
+<h3 id='title'><%= result.title %></h3>
+<h4 id='author'><%= result.authors %></h4>
+<h4 id='published-date'><%= result.published_date %></h4>
+<img id='img' src='<%= result.image_link %>' />
+<a id='info' href='<%= result.info_link %>'>More info</a>
+<% end %>
